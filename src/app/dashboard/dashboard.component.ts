@@ -30,7 +30,7 @@ export class DashboardComponent implements OnInit {
       recipeName: string;
       serveCont: number;
     };
-    /*this.rcpList = [
+    this.rcpList = [
       {
             id: 1,
             recipeName : 'dal bati',
@@ -51,7 +51,7 @@ export class DashboardComponent implements OnInit {
             instruction: 'value4',
             noOfPeople: 2
         }
-      ];*/
+      ];
   }
 
   saveRecipeModel(modal){
