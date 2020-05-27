@@ -1,0 +1,28 @@
+{
+  "recipeList":[
+    {
+      "recipe": {
+        "id":1,
+        "recipeName" : "dal bati",
+        "description" : "dal bati",
+        "creationTS":"value1",
+        "distType":"value2",
+        "ingredients":"value3",
+        "instruction":"value4",
+        "noOfPeople":2
+      }
+    },
+    {
+      "recipe": {
+        "id":2,
+        "recipeName" : "pav bhaji",
+        "description" : "pav bhaji",
+        "creationTS":"value1",
+        "distType":"value2",
+        "ingredients":"value3",
+        "instruction":"value4",
+        "noOfPeople":2
+      }
+    }
+  ]
+}

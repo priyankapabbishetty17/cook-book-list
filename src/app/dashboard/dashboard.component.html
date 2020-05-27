@@ -1,0 +1,77 @@
+<div class="container-lg">
+  <div class="button-bar">
+    <button type="button" class="btn btn-primary" (click)="openAdd(content)">Add</button>
+  </div>
+  <div class="card-container">
+    <div *ngFor="let a of rcpList" (click)="openView(viewcontent)">
+      <app-recipe-card (recipeEdit)="editRecipe($event, content)" [recipe] = "a">
+      </app-recipe-card>
+    </div>
+  </div>
+
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">New Recipe</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <label for="recipeName">Recipe Name</label>
+          <div class="input-group">
+            <input id="recipeName" class="form-control" [(ngModel)]="recipeInEdit.recipeName" name="recipeName">
+          </div>
+          <label for="shortDescription">Description</label>
+          <div class="input-group">
+            <input id="shortDescription" class="form-control" [(ngModel)]="recipeInEdit.description" name="shortDescription">
+          </div>
+          <label for="dishType">DishType</label>
+          <div class="input-group">
+            <input id="dishType" class="form-control" [(ngModel)]="recipeInEdit.dishType" name="dishType">
+          </div>
+          <label for="instructions">Instruction</label>
+          <div class="input-group">
+            <textarea id="instructions" class="form-control" [(ngModel)]="recipeInEdit.instructions" name="instructions"></textarea>
+          </div>
+          <label for="serveCount">Serve count</label>
+          <div class="input-group">
+            <input id="serveCount" class="form-control" [(ngModel)]="recipeInEdit.serveCont" name="serveCount">
+          </div>
+          <label for="ingredients">Ingredients</label>
+          <div class="input-group">
+            <textarea id="ingredients" class="form-control" [(ngModel)]="recipeInEdit.ingredients" name="ingredients"></textarea>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="saveRecipeModel(modal)">Save</button>
+    </div>
+  </ng-template>
+
+
+  <ng-template #viewcontent let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Viewer</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <label for="recipeName">Recipe Name</label>
+          <label>Here comes recipe name</label>
+          <label for="shortDescription">and here Description</label>
+          <label id="creationTS">Creation time and date</label>
+          <label for="serveCount">suitable for people</label>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Done</button>
+    </div>
+  </ng-template>
+</div>
