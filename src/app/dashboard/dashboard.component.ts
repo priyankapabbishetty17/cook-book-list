@@ -83,9 +83,9 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  getRecipes() {
+  /*getRecipes() {
     this.backendService.getRecipes().subscribe( data => {
       this.rcpList = data;
-    });
+    });*/
   }
 }
