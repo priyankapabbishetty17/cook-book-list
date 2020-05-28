@@ -1,9 +1,10 @@
 <div class="container-lg">
+  <h1 class="display-3 main-header">Cook Book</h1>
   <div class="button-bar">
     <button type="button" class="btn btn-primary" (click)="openAdd(content)">Add</button>
   </div>
   <div class="card-container">
-    <div *ngFor="let a of rcpList" (click)="openView(viewcontent)">
+    <div *ngFor="let a of dummyArray" (click)="openView(viewcontent)">
       <app-recipe-card (recipeEdit)="editRecipe($event, content)" [recipe] = "a">
       </app-recipe-card>
     </div>

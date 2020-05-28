@@ -13,6 +13,7 @@ export class DashboardComponent implements OnInit {
   rcpList: Recipe ;
   recipeInEdit: Recipe;
   recipe: Recipe;
+  dummyArray: any[];
 
   constructor(private modalService: NgbModal, private backendService: BackendService) { }
 
@@ -30,11 +31,11 @@ export class DashboardComponent implements OnInit {
       recipeName: string;
       serveCont: number;
     };
-    this.rcpList = [
+    this.dummyArray = [
       {
             id: 1,
-            recipeName : 'dal bati',
-            description : 'dal bati',
+            recipeName : 'Dal Bati',
+            description : 'This is a Rajasthani special dish from India',
             creationTS: 'value1',
             distType: 'value2',
             ingredients: 'value3',
@@ -43,8 +44,8 @@ export class DashboardComponent implements OnInit {
         },
       {
             id: 2,
-            recipeName : 'pav bhaji',
-            description : 'pav bhaji',
+            recipeName : 'Pav Bhaji',
+            description : 'This is a bombay speical dish from India',
             creationTS: 'value1',
             distType: 'value2',
             ingredients: 'value3',
@@ -83,9 +84,9 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  /*getRecipes() {
+  getRecipes() {
     this.backendService.getRecipes().subscribe( data => {
       this.rcpList = data;
     });
-  }*/
+  }
 }
